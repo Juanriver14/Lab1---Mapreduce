@@ -1,12 +1,29 @@
-#!/usr/bin/env python
-from operator import itemgetter
 import sys
+from operator import itemgetter
 
-current_word = None
-current_count = 0
-word = None
-
+reduce_2_output = {}
 for line in sys.stdin:
-    line = line.strip()
-    frequency, word = line.split('\t', 1)
-    print "%s\t%s" % (frequency, word)
+  line = line.strip()
+  try:
+   hour, ip_num = line.split("\t")
+   reduce_2_output[hour] = reduce_2_output.get(hour, "") + ip_num + '\n'
+   pass
+
+for hour, info in reduce_2_output.items():
+    ip_num_dict = {}
+    info = info.strip().split('\')
+  for line in info:
+      ip, num = line.split(',')
+      num = int(num)
+      ip_num_dict[ip] = num
+  ip_num_dict = sorted(ip_num_dict.items(), key= lambda x: x[1], reverse=True)
+  reduce_2_output[hour] = ip_num_dict[:3]
+ordered_numbers = list(sorted(reduce_2_output.keys()))
+                              
+                              
+                              
+for hour in ordered_numbers:
+  info = reduce_2_output[hour]
+  for i in info:
+     print("{}\t{}\t{}". format(hour, i[0], i[1]))
+
