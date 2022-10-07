@@ -13,4 +13,4 @@ for line in sys.stdin:
 sorted_reducer_1_output = sorted(reducer_1_output.items(), key=itemgetter(0))
 
 for hour_ip, num in sorted_reducer_1_output:
-  print("{}\t{}\".format9=(hour_ip, num))
+  print("{}\t{}\".format(hour_ip, num))
