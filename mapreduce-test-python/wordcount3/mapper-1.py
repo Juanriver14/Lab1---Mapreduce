@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-
+#!/usr/bin/python
+# --*-- coding:utf-8 --*--
 
 from operator import itemgetter
 import sys
