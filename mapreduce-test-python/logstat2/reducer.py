@@ -20,16 +20,16 @@ hour_flag = ''
 dict_hour = {}
 
 for hour_ip, count in sorted_dict_ip_count:
-    hour, ip = hour_ip.split(" ")
-  if not dict_hour.get(hour):
-    dict_hour[hour] = {hour_ip: count}
-  else:
-    dict_hour[hour].update({hour_ip: count})
+        hour, ip = hour_ip.split(" ")
+    if not dict_hour.get(hour):
+        dict_hour[hour] = {hour_ip: count}
+      else:
+        dict_hour[hour].update({hour_ip: count})
 
 for hour in dict_hour:
-  ips_in_current_hour = sorted(dict_hour[hour].items(),  key=itemgetter(1), reverse=True)
-  print(f"Top 3 IP at {hour}:")
-  for i in range(0,3):
-    print '%s\t%s' % (ips_in_current_hour[i])
-  print("\n\n")
+      ips_in_current_hour = sorted(dict_hour[hour].items(),  key=itemgetter(1), reverse=True)
+      print(f"Top 3 IP at {hour}:")
+      for i in range(0,3):
+        print '%s\t%s' % (ips_in_current_hour[i])
+      print("\n\n")
     
