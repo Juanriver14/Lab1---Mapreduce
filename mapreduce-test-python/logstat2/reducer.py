@@ -28,7 +28,7 @@ for hour_ip, count in sorted_dict_ip_count:
 
 for hour in dict_hour:
       ips_in_current_hour = sorted(dict_hour[hour].items(),  key=itemgetter(1), reverse=True)
-      print(f"Top 3 IP at {hour}:")
+      print("Top 3 IP at {hour}:")
       for i in range(0,3):
         print(ips_in_current_hour[i])
       print("\n\n")
